@@ -1,0 +1,41 @@
+<!-- -->
+<!-- Separate file for forms-->
+<!-- There are many types of forms:-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <!-- In this example we will have pure HTML forms, with no Javascript
+See the test-form file for forms with Javascript
+Basic text form-->
+    <form>
+      <!--The `for` attribute connects the label to the `name` attr of the form
+    The `value` attribute defines placeholder text -->
+      <label for="textform">A Text Form</label>
+      <br />
+      <input type="text" name="textform" value="placeholder" />
+      <br />
+      <!-- Forms can also only accept numbers as input-->
+      <label for="numberform">A Number Form</label>
+      <br />
+      <input type="number" name="numberform" value="1" step="1" />
+      <!-- The `value` attr only accepts numbers, and the `step` attr adds
+an arrow button to click and add per step -->
+      <br />
+      <!-- Range sliders: -->
+      <label for="rangeslider">Range Slider</label>
+      <br />
+      <input type="range" name="rangeslider" min="0" max="50" step="1" />
+      <!-- You can see how the step affects the sliding by adding other values
+    like min="0" max="50" step="25", etc-->
+      <br />
+      <label for=""></label>
+      <input type="checkbox" name="" value="">
+    </form>
+    <!--Note that all of these form examples were included within a single form
+  element -->
+  </body>
+</html>
