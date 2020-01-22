@@ -10,10 +10,13 @@
   <body>
     <!-- In this example we will have pure HTML forms, with no Javascript
 See the test-form file for forms with Javascript
+Because these are plain HTML the `method` attr will not be defined
 Basic text form-->
     <form>
       <!--The `for` attribute connects the label to the `name` attr of the form
-    The `value` attribute defines placeholder text -->
+    The `value` attribute defines placeholder text
+  Note that the label can be hoisted above the input name - the label's for attr
+can be called above the input defining the name -->
       <label for="textform">A Text Form</label>
       <br />
       <input type="text" name="textform" value="placeholder" />
@@ -32,8 +35,38 @@ an arrow button to click and add per step -->
       <!-- You can see how the step affects the sliding by adding other values
     like min="0" max="50" step="25", etc-->
       <br />
-      <label for=""></label>
-      <input type="checkbox" name="" value="">
+      <!-- Check boxes-->
+      <label for="onebox">1</label>
+      <input type="checkbox" name="onebox" value="one" />
+      <br />
+      <label for="twobox">2</label>
+      <input type="checkbox" name="twobox" value="two" />
+      <br />
+      <!-- Radio buttons-->
+      <label for="radiofreebutton">Radio Free Button</label>
+      <input type="radio" name="radiofreebutton" />
+      <br />
+      <!--Drop down forms -->
+      <label for="dropdown">Sample Dropdown List</label>
+      <br />
+      <select name="dropdown" id="cars">
+        <option value="lambo">Lamborghini</option>
+        <option value="pinin">Pininfarina</option>
+        <option value="porsche">Porsche</option>
+      </select>
+      <br />
+      <!-- Datalists forms - they are connected with the `text` input-->
+      <input type="text" id="data" list="datalist" />
+      <datalist id="datalist">
+        <option value="Computer Data"></option>
+        <option value="Cyberpunk"></option>
+        <option value="PC Music"></option>
+      </datalist>
+      <!-- Textarea form - also connected with the text input-->
+      <input type="text" name="" value="" />
+      <textarea id="extra" name="extra" rows="3" cols="40">
+Type here...
+      </textarea>
     </form>
     <!--Note that all of these form examples were included within a single form
   element -->
