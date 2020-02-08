@@ -1,0 +1,124 @@
+<!-- From https://javascript.info/events-change-input -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      td select,
+      td input {
+        width: 150px;
+      }
+
+      #diagram td {
+        vertical-align: bottom;
+        text-align: center;
+        padding: 10px;
+      }
+
+      #diagram div {
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    Deposit calculator.
+
+    <form name="calculator">
+      <table>
+        <tr>
+          <td>Initial deposit</td>
+          <td>
+            <input
+              name="money"
+              type="number"
+              value="10000"
+              id="money"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>How many months?</td>
+          <td>
+            <select name="months" id="months" onchange="function()">
+              <option value="3">3 (minimum)</option>
+              <option value="6">6 (half-year)</option>
+              <option value="12" selected>12 (one year)</option>
+              <option value="18">18 (1.5 years)</option>
+              <option value="24">24 (2 years)</option>
+              <option value="30">30 (2.5 years)</option>
+              <option value="36">36 (3 years)</option>
+              <option value="60">60 (5 years)</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Interest per year?</td>
+          <td>
+            <input
+              name="interest"
+              type="number"
+              value="5"
+              id="interest"
+              required
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p>Was:</p>
+    <p id="initial"></p>
+    <br />
+    <p>Becomes:</p>
+    <p id="after"></p>
+
+    <script>
+      let form = document.forms.calculator;
+      // your code
+      /*
+            _     
+        _ __ _  _   __ ___  __| |___ 
+       | '  \ || | / _/ _ \/ _` / -_)
+       |_|_|_\_, | \__\___/\__,_\___|
+             |__/                    
+      (doesn't work)
+            let initial = form.money;
+            let years = form.months / 12;
+            let interest = form.interest / 100;
+
+            const function = () => {
+              let result = Math.round(initial * (1 + interest * years))
+            }
+
+            money.oninput = function() {};
+
+            interest.oninput = function() {};
+            */
+
+      //the solution code:
+
+      form.money.oninput = calculate;
+      form.months.onchange = calculate;
+      forms.interest.oninput = calculate;
+
+      function calculate() {
+        let initial = +form.money.value;
+        if (!initial) return;
+
+        let interest = form.interest.value * 0.01;
+
+        if (!interest) return;
+
+        let years = form.months.value / 12;
+        if (!years) return;
+
+        let result = Math.round(initial * (1 + interest * years));
+        document.getElementById('initial').innerHTML = form.money.value;
+        //why do I have to use the DOM to change above ^
+        //but not below ˘˘ ?
+        after.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
