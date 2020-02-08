@@ -75,17 +75,28 @@
 
     <script>
       let form = document.forms.calculator;
+      // your code
+      /*
+            _     
+        _ __ _  _   __ ___  __| |___ 
+       | '  \ || | / _/ _ \/ _` / -_)
+       |_|_|_\_, | \__\___/\__,_\___|
+             |__/                    
+      (doesn't work)
 
-
-      let initial = form.money.value;
-      let years = form.months.value / 12;
-      let interest = form.interest.value / 100;
+      previously the let initial... lines were declared outside of the function.  This made the script only work once - it would display the values entered on the first oninput, but then wouldn't update anymore.
+      By putting the variable declaration inside of the function, we ensure that each time oninput is triggered the variables are re-grabbed from the forms.
+      */
 
       const myFunction = () => {
+        let initial = form.money.value;
+        let years = form.months.value / 12;
+        let interest = form.interest.value / 100;
         let result = Math.round(initial * (1 + interest * years));
         document.getElementById('initial').innerText = initial;
         document.getElementById('after').innerText = result;
       };
+
       form.money.oninput = myFunction;
       form.months.onchange = myFunction;
       form.interest.oninput = myFunction;
