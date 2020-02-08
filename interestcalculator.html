@@ -87,13 +87,13 @@
             let years = form.months / 12;
             let interest = form.interest / 100;
 
-            const function = () => {
+            const myFunction = () => {
               let result = Math.round(initial * (1 + interest * years))
             }
 
-            money.oninput = function() {};
+            money.oninput = myFunction() {};
 
-            interest.oninput = function() {};
+            interest.oninput = myFunction() {};
             */
 
       //the solution code:
