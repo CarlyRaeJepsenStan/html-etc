@@ -75,53 +75,20 @@
 
     <script>
       let form = document.forms.calculator;
-      // your code
-      /*
-            _     
-        _ __ _  _   __ ___  __| |___ 
-       | '  \ || | / _/ _ \/ _` / -_)
-       |_|_|_\_, | \__\___/\__,_\___|
-             |__/                    
-      (doesn't work)
-      */
-            let initial = form.money.value;
-            let years = form.months.value / 12;
-            let interest = form.interest.value / 100;
-
-            const myFunction = () => {
-              let result = Math.round(initial * (1 + interest * years))
-              document.getElementById("initial").innerText = initial
-              document.getElementById("after").innerText = result
-            }
-
-            money.oninput = myFunction() {};
-
-            interest.oninput = myFunction() {};
 
 
-      //the solution code:
+      let initial = form.money.value;
+      let years = form.months.value / 12;
+      let interest = form.interest.value / 100;
 
-      form.money.oninput = calculate;
-      form.months.onchange = calculate;
-      forms.interest.oninput = calculate;
-
-      function calculate() {
-        let initial = +form.money.value;
-        if (!initial) return;
-
-        let interest = form.interest.value * 0.01;
-
-        if (!interest) return;
-
-        let years = form.months.value / 12;
-        if (!years) return;
-
+      const myFunction = () => {
         let result = Math.round(initial * (1 + interest * years));
-        document.getElementById('initial').innerHTML = form.money.value;
-        //why do I have to use the DOM to change above ^
-        //but not below ˘˘ ?
-        after.innerHTML = result;
-      }
+        document.getElementById('initial').innerText = initial;
+        document.getElementById('after').innerText = result;
+      };
+      form.money.oninput = myFunction;
+      form.months.onchange = myFunction;
+      form.interest.oninput = myFunction;
     </script>
   </body>
 </html>
