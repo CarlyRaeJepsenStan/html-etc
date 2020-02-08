@@ -93,8 +93,8 @@
         let years = form.months.value / 12;
         let interest = form.interest.value / 100;
         let result = Math.round(initial * (1 + interest * years));
-        document.getElementById('initial').innerText = initial;
-        document.getElementById('after').innerText = result;
+        document.getElementById("initial").innerText = initial;
+        document.getElementById("after").innerText = result;
       };
 
       form.money.oninput = myFunction;
