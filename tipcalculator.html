@@ -14,34 +14,34 @@
         <label for="check"> Your Check </label>
         <br />
         <input type="number" id="check" value="100" step="50" />
-        <br />
-        <br />
+        <br>
+        <br>
         <label for="percent"> How Much You Want To Tip in Percent </label>
-        <br />
-        <input type="number" name="percent" value="15" step="1" />
+        <br>
+        <input type="number" id="percent" value="15" step="1" />
       </form>
     </div>
 
-    <p id="output"></p>
+    <p id="output" style="text-align:center"></p>
     <script>
       //move these var declaration lines inside of the function
-
-      //let percent = form.percent.value / 100;
-      check.oninput = function() {
-        let asdf = check.value;
-        console.log(asdf);
-      };
-      /*
       const calculate = () => {
-        var tip = check * percent;
+        let checkvalue = check.value;
+        //console.log(checkvalue)
+
+        let percentage = percent.value / 100
+        //console.log(percentage)
+        let tip = checkvalue * percentage
+        //console.log(tip)
+        
         document.getElementById(
           "output"
-        ).innerText = `${percent}% of $${check} is ${tip}`;
-      };
+        ).innerText = `${percentage}% of $${checkvalue} is $${tip}`
+      }
 
-      form.check.oninput = calculate;
-      form.percent.oninput = calculate;
-      */
+      check.oninput = calculate;
+      percent.oninput = calculate;
+
     </script>
   </body>
 </html>
