@@ -3,22 +3,45 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Project: Tip Calculator</title>
-
   </head>
   <body>
-    <form>
-      <input type="number" name="check" value="100" step="50">
+    <div style="text-align:center">
+      <h1>Tip Calculator</h1>
 
+      <form>
+        <label for="check"> Your Check </label>
+        <br />
+        <input type="number" id="check" value="100" step="50" />
+        <br />
+        <br />
+        <label for="percent"> How Much You Want To Tip in Percent </label>
+        <br />
+        <input type="number" name="percent" value="15" step="1" />
+      </form>
+    </div>
 
-    </form>
-
+    <p id="output"></p>
     <script>
-      const calculate = () => {
-       let check = form.check.value
+      //move these var declaration lines inside of the function
 
+      //let percent = form.percent.value / 100;
+      check.oninput = function() {
+        let asdf = check.value;
+        console.log(asdf);
       };
+      /*
+      const calculate = () => {
+        var tip = check * percent;
+        document.getElementById(
+          "output"
+        ).innerText = `${percent}% of $${check} is ${tip}`;
+      };
+
+      form.check.oninput = calculate;
+      form.percent.oninput = calculate;
+      */
     </script>
   </body>
 </html>
