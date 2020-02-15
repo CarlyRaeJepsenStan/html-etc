@@ -1,5 +1,5 @@
 # html-etc
-https://img.shields.io/codacy/grade/65780baf22924cbb86024721dddaacf0?color=blueviolet&style=plastic
+![Codacy grade](https://img.shields.io/codacy/grade/65780baf22924cbb86024721dddaacf0?color=blueviolet&style=plastic)
 
 
 My experiments and/or projects with frontend, not exclusively in HTML.
